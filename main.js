@@ -18,30 +18,31 @@
     b -calcolare il prezzo del biglietto tramite le informazioni dichiarate dall'utente 
         b.1 eseguire il prodotto di km e il prezzo (0.21 € al km)
 
-    c -condizione se l' età  dell' utente è < di 18 anni verra applicato uno sconto del 20%
-        c.1 -se l'età dell'utente è > di 65 anni verra applicato uno sconto del 40% 
-            c.2 -altrimenti paga il prezzo calcolato 
+    c -calcolare il 20% dal prezzo del biglietto 
+        c.1 calcolare il 40% dal prezzo del biglietto 
+
+    d -condizione:
+        d.1 -se l' età  dell' utente è < di 18 anni verra applicato uno sconto del 20%
+            d.2 -se l'età dell'utente è > di 65 anni verra applicato uno sconto del 40% 
+                 d.3 -altrimenti paga il prezzo calcolato 
 */
 
 // dichiarazione variabili
-let km = parseInt( prompt("Quanti km vuoi percorrere?", "10") );
-let age = parseInt( prompt("Quanti anni hai ?", "10") );
+let km = parseInt(prompt("Quanti km vuoi percorrere?", "10"));
+let age = parseInt(prompt("Quanti anni hai ?", "10"));
 let priceKm = 0.21;
-let discountForMinors = 20% ;
-
-
 
 // calcolo del prezzo 
 let priceTravel = (km * priceKm)
 
-console.log(priceTravel)
+// calcolo sconto 20%
+let discountForMinors = (priceTravel * 20) / 100;
+// calcolo sconto 40% 
+let discontOver65 = (priceTravel * 40) / 100;
 
-//  condizione 
 
-if (age < 18 ) {
 
-    console.log (priceTravel - discountForMinors );
 
-}
+console.log(priceTravel);
 
 
