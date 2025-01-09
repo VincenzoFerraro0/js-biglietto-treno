@@ -27,11 +27,21 @@
 let km = parseInt( prompt("Quanti km vuoi percorrere?", "10") );
 let age = parseInt( prompt("Quanti anni hai ?", "10") );
 let priceKm = 0.21;
+let discountForMinors = 20% ;
+
+
 
 // calcolo del prezzo 
 let priceTravel = (km * priceKm)
 
+console.log(priceTravel)
 
-console.log (priceTravel)
+//  condizione 
+
+if (age < 18 ) {
+
+    console.log (priceTravel - discountForMinors );
+
+}
 
 
