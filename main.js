@@ -29,6 +29,9 @@ let age = parseInt( prompt("Quanti anni hai ?", "10") );
 let priceKm = 0.21;
 
 // calcolo del prezzo 
+let priceTravel = (km * priceKm)
 
+
+console.log (priceTravel)
 
 
