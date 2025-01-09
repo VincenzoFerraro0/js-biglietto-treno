@@ -18,31 +18,39 @@
     b -calcolare il prezzo del biglietto tramite le informazioni dichiarate dall'utente 
         b.1 eseguire il prodotto di km e il prezzo (0.21 € al km)
 
-    c -calcolare il 20% dal prezzo del biglietto 
-        c.1 calcolare il 40% dal prezzo del biglietto 
+    c -calcolare il 20% dal prezzo del viaggio 
+        c.1 calcolare il 40% dal prezzo del viaggio
 
     d -condizione:
-        d.1 -se l' età  dell' utente è < di 18 anni verra applicato uno sconto del 20%
-            d.2 -se l'età dell'utente è > di 65 anni verra applicato uno sconto del 40% 
-                 d.3 -altrimenti paga il prezzo calcolato 
+        d.1 -se l' età  dell' utente è < di 18 anni verra applicato uno sconto del 20% al biglietto 
+            d.2 -se l'età dell'utente è > di 65 anni verra applicato uno sconto del 40% al biglietto
+                 d.3 -altrimenti paga il prezzo intero del biglietto 
 */
 
-// dichiarazione variabili
+// FASE DI PREPARAZIONE 
 let km = parseInt(prompt("Quanti km vuoi percorrere?", "10"));
 let age = parseInt(prompt("Quanti anni hai ?", "10"));
 let priceKm = 0.21;
 
-// calcolo del prezzo 
-let priceTravel = (km * priceKm)
 
+// FASE DI ELABORAZIONE 
+
+// calcolo del prezzo 
+let priceTravel = (km * priceKm);
 // calcolo sconto 20%
 let discountForMinors = (priceTravel * 20) / 100;
 // calcolo sconto 40% 
-let discontOver65 = (priceTravel * 40) / 100;
-
-
-
+let discountOver65 = (priceTravel * 40) / 100;
 
 console.log(priceTravel);
 
+// FASE DI OUTPUT
+if (age < 18 ) {
+    console.log(`Ciao lei è minorenne le verra applicato uno conto del 20%, paga: ${(priceTravel - discountForMinors).toFixed(2)}€`)
 
+}else if (age > 65 ) {
+    console.log(`Ciao lei è over 65 le verra applicato uno conto del 40%, paga: ${(priceTravel - discountOver65).toFixed(2)}€`)
+
+}else {
+    console.log (`Ciao lei è uno sfigato paga e basta ${(priceTravel).toFixed(2)}€`)
+}
