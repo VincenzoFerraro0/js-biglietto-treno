@@ -28,13 +28,9 @@
 */
 
 // FASE DI PREPARAZIONE 
-let km = parseInt(prompt("Quanti km vuoi percorrere?", "10"));
-let age = parseInt(prompt("Quanti anni hai ?", "10"));
+let km = parseInt(prompt("Quanti km vuoi percorrere?"));
+let age = parseInt(prompt("Quanti anni hai ?"));
 let priceKm = 0.21;
-
-
-// FASE DI ELABORAZIONE 
-
 // calcolo del prezzo 
 let priceTravel = (km * priceKm);
 // calcolo sconto 20%
@@ -42,15 +38,21 @@ let discountForMinors = (priceTravel * 20) / 100;
 // calcolo sconto 40% 
 let discountOver65 = (priceTravel * 40) / 100;
 
+let priceBiglietto; 
+
 console.log(priceTravel);
 
-// FASE DI OUTPUT
+// FASE DI ELABORAZIONE 
 if (age < 18 ) {
-    console.log(`Ciao lei è minorenne le verra applicato uno conto del 20%, paga: ${(priceTravel - discountForMinors).toFixed(2)}€`)
+   priceBiglietto = (`Ciao lei è minorenne le verra applicato uno conto del 20%, paga: ${(priceTravel - discountForMinors).toFixed(2)}€`)
 
 }else if (age > 65 ) {
-    console.log(`Ciao lei è over 65 le verra applicato uno conto del 40%, paga: ${(priceTravel - discountOver65).toFixed(2)}€`)
+    priceBiglietto = (`Ciao lei è over 65 le verra applicato uno conto del 40%, paga: ${(priceTravel - discountOver65).toFixed(2)}€`)
 
 }else {
-    console.log (`Ciao lei è uno sfigato paga e basta ${(priceTravel).toFixed(2)}€`)
+    priceBiglietto = (`Ciao lei è uno sfigato paga e basta ${(priceTravel).toFixed(2)}€`)
 }
+
+// FASE DI OUTPUT
+
+alert (priceBiglietto)
